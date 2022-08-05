@@ -2,6 +2,7 @@ package domains;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "T_RATE_PROFESSOR")
@@ -13,14 +14,14 @@ public class Professor {
     }
 
     //Construtor sem id
-    public Professor(String nmProfessor, Date dtNascimento, String stProfessor) {
+    public Professor(String nmProfessor, Date dtNascimento, Boolean stProfessor) {
         this.nmProfessor = nmProfessor;
         this.dtNascimento = dtNascimento;
         this.stProfessor = stProfessor;
     }
 
     //Construtor completo
-    public Professor(Integer cdProfessor, String nmProfessor, Date dtNascimento, String stProfessor) {
+    public Professor(Integer cdProfessor, String nmProfessor, Date dtNascimento, Boolean stProfessor) {
         this.cdProfessor = cdProfessor;
         this.nmProfessor = nmProfessor;
         this.dtNascimento = dtNascimento;
@@ -39,7 +40,21 @@ public class Professor {
     private Date dtNascimento;
 
     @Column(name = "st_professor", nullable = false, length = 1)
-    private String stProfessor;
+    private Boolean stProfessor;
+
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    @JoinTable(name = "T_RATE_INSTITUICAO_PROFESSOR",
+                joinColumns = @JoinColumn(name = "cd_professor"),
+                inverseJoinColumns = @JoinColumn(name = "cd_instituicao"))
+    private List<Instituicao> instituicaoList;
+
+    public List<Instituicao> getInstituicaoList() {
+        return instituicaoList;
+    }
+
+    public void setInstituicaoList(List<Instituicao> instituicaoList) {
+        this.instituicaoList = instituicaoList;
+    }
 
     public Integer getCdProfessor() {
         return cdProfessor;
@@ -65,11 +80,11 @@ public class Professor {
         this.dtNascimento = dtNascimento;
     }
 
-    public String getStProfessor() {
+    public Boolean getStProfessor() {
         return stProfessor;
     }
 
-    public void setStProfessor(String stProfessor) {
+    public void setStProfessor(Boolean stProfessor) {
         this.stProfessor = stProfessor;
     }
 }

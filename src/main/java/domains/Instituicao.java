@@ -1,9 +1,10 @@
 package domains;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name = "T_RATE_PROFESSOR")
+@Table(name = "T_RATE_INSTITUICAO")
 @SequenceGenerator(name="instituicao",sequenceName = "SQ_TB_INSTITUICAO", allocationSize = 1)
 public class Instituicao {
 
@@ -39,6 +40,9 @@ public class Instituicao {
 
     @Column(name = "ds_plano", nullable = true, length = 50)
     private String ds_plano;
+
+    @ManyToMany(mappedBy = "instituicaoList")
+    private List<Professor> professorList;
 
     public Integer getCdInstituicao() {
         return cdInstituicao;
