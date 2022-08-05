@@ -3,6 +3,7 @@ package domains;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "T_RATE_PROFESSOR")
 @SequenceGenerator(name="instituicao",sequenceName = "SQ_TB_INSTITUICAO", allocationSize = 1)
 public class Instituicao {
 
