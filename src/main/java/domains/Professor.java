@@ -30,7 +30,7 @@ public class Professor {
 
     @Id
     @Column(name = "cd_professor", nullable = false, length = 3)
-    @GeneratedValue(generator = "professor", strategy =  GenerationType.SEQUENCE)
+    @GeneratedValue(generator = "professor", strategy = GenerationType.SEQUENCE)
     private Integer cdProfessor;
 
     @Column(name = "nm_professor", nullable = false, length = 50)
@@ -41,20 +41,6 @@ public class Professor {
 
     @Column(name = "st_professor", nullable = false, length = 1)
     private Boolean stProfessor;
-
-    @ManyToMany(cascade = CascadeType.PERSIST)
-    @JoinTable(name = "T_RATE_INSTITUICAO_PROFESSOR",
-                joinColumns = @JoinColumn(name = "cd_professor"),
-                inverseJoinColumns = @JoinColumn(name = "cd_instituicao"))
-    private List<Instituicao> instituicaoList;
-
-    public List<Instituicao> getInstituicaoList() {
-        return instituicaoList;
-    }
-
-    public void setInstituicaoList(List<Instituicao> instituicaoList) {
-        this.instituicaoList = instituicaoList;
-    }
 
     public Integer getCdProfessor() {
         return cdProfessor;
