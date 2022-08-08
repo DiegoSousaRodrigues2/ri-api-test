@@ -25,7 +25,7 @@ public class TurmaAluno {
     }
 
     @Id
-    @Column(name = "cd_turma_aluno")
+    @Column(name = "cd_turma_aluno", nullable = false, precision = 3)
     @GeneratedValue(generator = "turmaAluno", strategy = GenerationType.SEQUENCE)
     private Integer cdTurmaAluno;
 

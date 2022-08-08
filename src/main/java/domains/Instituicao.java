@@ -28,7 +28,7 @@ public class Instituicao {
     }
 
     @Id
-    @Column(name = "cd_instituicao", nullable = false, length = 3)
+    @Column(name = "cd_instituicao", nullable = false, precision = 3)
     @GeneratedValue(generator = "instituicao", strategy = GenerationType.SEQUENCE)
     private Integer cdInstituicao;
 

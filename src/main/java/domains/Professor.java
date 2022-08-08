@@ -29,7 +29,7 @@ public class Professor {
     }
 
     @Id
-    @Column(name = "cd_professor", nullable = false, length = 3)
+    @Column(name = "cd_professor", nullable = false, precision = 3)
     @GeneratedValue(generator = "professor", strategy = GenerationType.SEQUENCE)
     private Integer cdProfessor;
 

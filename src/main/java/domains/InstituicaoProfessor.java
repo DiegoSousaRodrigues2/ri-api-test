@@ -10,7 +10,7 @@ public class InstituicaoProfessor {
     //Construtor padrão
     public InstituicaoProfessor() {
     }
-    
+
     //Construtor sem id
     public InstituicaoProfessor(Professor professor, Instituicao instituicao) {
         this.professor = professor;
@@ -25,7 +25,7 @@ public class InstituicaoProfessor {
     }
 
     @Id
-    @Column(name = "cd_instituicao_professor")
+    @Column(name = "cd_instituicao_professor", nullable = false, precision = 3)
     @GeneratedValue(generator = "instituicaoProfessor", strategy = GenerationType.SEQUENCE)
     private Integer cdInstituicaoProfessor;
 

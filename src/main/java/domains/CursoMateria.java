@@ -22,7 +22,7 @@ public class CursoMateria {
     }
 
     @Id
-    @Column(name = "cd_curso_materia", nullable = false, length = 3)
+    @Column(name = "cd_curso_materia", nullable = false, precision = 3)
     @GeneratedValue(generator = "cursoMateria", strategy = GenerationType.SEQUENCE)
     private Integer cdCursoMateria;
 

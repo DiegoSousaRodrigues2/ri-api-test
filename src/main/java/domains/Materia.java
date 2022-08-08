@@ -26,7 +26,7 @@ public class Materia {
     }
 
     @Id
-    @Column(name = "cd_materia", nullable = false, length = 3)
+    @Column(name = "cd_materia", nullable = false, precision = 3)
     private Integer cdMateria;
 
     @Column(name = "nm_materia", nullable = false, length = 50)
