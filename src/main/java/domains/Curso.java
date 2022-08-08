@@ -1,6 +1,7 @@
 package domains;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "T_RATE_CURSO")
@@ -34,6 +35,9 @@ public class Curso {
 
     @Column(name = "nm_periodo", nullable = false, length = 3)
     private Integer nmPeriodo;
+
+    @OneToMany(mappedBy = "curso")
+    private List<Turma> turmaList;
 
     public Integer getCdCurso() {
         return cdCurso;

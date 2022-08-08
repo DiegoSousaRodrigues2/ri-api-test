@@ -46,9 +46,6 @@ public class Professor {
     @OneToMany(mappedBy = "professor", cascade = CascadeType.ALL)
     private List<InstituicaoProfessor> instituicaoProfessorList;
 
-    @OneToMany(mappedBy = "professor", cascade = CascadeType.ALL)
-    private List<Turma> turmaList;
-
     public Integer getCdProfessor() {
         return cdProfessor;
     }

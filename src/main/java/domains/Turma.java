@@ -12,16 +12,14 @@ public class Turma {
     }
 
     //Construtor sem id
-    public Turma(String nmTurma, Professor professor) {
+    public Turma(String nmTurma) {
         this.nmTurma = nmTurma;
-        this.professor = professor;
     }
 
     //Construtor completo
-    public Turma(Integer cdTurma, String nmTurma, Professor professor) {
+    public Turma(Integer cdTurma, String nmTurma) {
         this.cdTurma = cdTurma;
         this.nmTurma = nmTurma;
-        this.professor = professor;
     }
 
     @Id
@@ -33,8 +31,8 @@ public class Turma {
     private String nmTurma;
 
     @ManyToOne
-    @JoinColumn(name = "cd_professor", nullable = false)
-    private Professor professor;
+    @JoinColumn(name = "cd_curso",nullable = false)
+    public Curso curso;
 
     public Integer getCdTurma() {
         return cdTurma;
@@ -52,11 +50,11 @@ public class Turma {
         this.nmTurma = nmTurma;
     }
 
-    public Professor getProfessor() {
-        return professor;
+    public Curso getCurso() {
+        return curso;
     }
 
-    public void setProfessor(Professor professor) {
-        this.professor = professor;
+    public void setCurso(Curso curso) {
+        this.curso = curso;
     }
 }
