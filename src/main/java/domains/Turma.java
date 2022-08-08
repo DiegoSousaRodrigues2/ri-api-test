@@ -1,6 +1,7 @@
 package domains;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "T_RATE_TURMA")
@@ -33,6 +34,9 @@ public class Turma {
     @ManyToOne
     @JoinColumn(name = "cd_curso",nullable = false)
     public Curso curso;
+
+    @OneToMany(mappedBy = "turma", cascade = CascadeType.ALL)
+    private List<TurmaProfessor> turmaProfessorList;
 
     public Integer getCdTurma() {
         return cdTurma;
