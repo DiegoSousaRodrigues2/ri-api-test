@@ -39,6 +39,9 @@ public class Curso {
     @OneToMany(mappedBy = "curso")
     private List<Turma> turmaList;
 
+    @OneToMany(mappedBy = "curso")
+    private List<CursoMateria> cursoMateriaList;
+
     public Integer getCdCurso() {
         return cdCurso;
     }
@@ -61,5 +64,21 @@ public class Curso {
 
     public void setNmPeriodo(Integer nmPeriodo) {
         this.nmPeriodo = nmPeriodo;
+    }
+
+    public List<Turma> getTurmaList() {
+        return turmaList;
+    }
+
+    public void setTurmaList(List<Turma> turmaList) {
+        this.turmaList = turmaList;
+    }
+
+    public List<CursoMateria> getCursoMateriaList() {
+        return cursoMateriaList;
+    }
+
+    public void setCursoMateriaList(List<CursoMateria> cursoMateriaList) {
+        this.cursoMateriaList = cursoMateriaList;
     }
 }

@@ -46,6 +46,9 @@ public class Aluno {
     @OneToMany(mappedBy = "aluno")
     private List<InstituicaoAluno> insttuicaoAlunoList;
 
+    @OneToMany(mappedBy = "materia")
+    private List<AvaliacaoDiaria> avaliacaoDiariaList;
+
     public Integer getCdAluno() {
         return cdAluno;
     }
@@ -76,5 +79,13 @@ public class Aluno {
 
     public void setStAluno(Boolean stAluno) {
         this.stAluno = stAluno;
+    }
+
+    public List<InstituicaoAluno> getInsttuicaoAlunoList() {
+        return insttuicaoAlunoList;
+    }
+
+    public void setInsttuicaoAlunoList(List<InstituicaoAluno> insttuicaoAlunoList) {
+        this.insttuicaoAlunoList = insttuicaoAlunoList;
     }
 }

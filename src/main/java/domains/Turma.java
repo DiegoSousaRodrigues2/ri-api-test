@@ -38,6 +38,9 @@ public class Turma {
     @OneToMany(mappedBy = "turma", cascade = CascadeType.ALL)
     private List<TurmaProfessor> turmaProfessorList;
 
+    @OneToMany(mappedBy = "turma", cascade = CascadeType.ALL)
+    private List<TurmaAluno> turmaAlunoList;
+
     public Integer getCdTurma() {
         return cdTurma;
     }
@@ -60,5 +63,13 @@ public class Turma {
 
     public void setCurso(Curso curso) {
         this.curso = curso;
+    }
+
+    public List<TurmaProfessor> getTurmaProfessorList() {
+        return turmaProfessorList;
+    }
+
+    public void setTurmaProfessorList(List<TurmaProfessor> turmaProfessorList) {
+        this.turmaProfessorList = turmaProfessorList;
     }
 }

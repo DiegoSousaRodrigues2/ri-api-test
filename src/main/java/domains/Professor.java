@@ -80,4 +80,20 @@ public class Professor {
     public void setStProfessor(Boolean stProfessor) {
         this.stProfessor = stProfessor;
     }
+
+    public List<InstituicaoProfessor> getInstituicaoProfessorList() {
+        return instituicaoProfessorList;
+    }
+
+    public void setInstituicaoProfessorList(List<InstituicaoProfessor> instituicaoProfessorList) {
+        this.instituicaoProfessorList = instituicaoProfessorList;
+    }
+
+    public List<TurmaProfessor> getTurmaProfessorList() {
+        return turmaProfessorList;
+    }
+
+    public void setTurmaProfessorList(List<TurmaProfessor> turmaProfessorList) {
+        this.turmaProfessorList = turmaProfessorList;
+    }
 }
