@@ -42,6 +42,10 @@ public class Professor {
     @Column(name = "st_professor", nullable = false, length = 1)
     private Boolean stProfessor;
 
+    //Mapeamento Bidirecional InstituicaoProfessor
+    @OneToMany(mappedBy = "professor", cascade = CascadeType.ALL)
+    private List<InstituicaoProfessor> instituicaoProfessorList;
+
     public Integer getCdProfessor() {
         return cdProfessor;
     }

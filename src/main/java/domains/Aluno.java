@@ -2,6 +2,7 @@ package domains;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "T_RATE_ALUNO")
@@ -40,6 +41,10 @@ public class Aluno {
 
     @Column(name = "st_aluno", nullable = false)
     private Boolean stAluno;
+
+    //Mapeamento Bidirecional InstituicaoAluno
+    @OneToMany(mappedBy = "aluno")
+    private List<InstituicaoAluno> insttuicaoAlunoList;
 
     public Integer getCdAluno() {
         return cdAluno;

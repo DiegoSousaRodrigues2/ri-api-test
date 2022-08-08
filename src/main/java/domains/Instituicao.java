@@ -41,6 +41,14 @@ public class Instituicao {
     @Column(name = "ds_plano", nullable = true, length = 50)
     private String ds_plano;
 
+    //Mapeamento Bidirecional InstituicaoProfessor
+    @OneToMany(mappedBy = "instituicao")
+    private List<InstituicaoProfessor> instituicaoProfessorList;
+
+    //Mapeamento Bidirecional InstituicaoAluno
+    @OneToMany(mappedBy = "instituicao")
+    private List<InstituicaoAluno> insttuicaoAlunoList;
+
     public Integer getCdInstituicao() {
         return cdInstituicao;
     }
